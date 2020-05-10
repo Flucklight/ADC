@@ -1,7 +1,7 @@
 #include <16f887.h>
-#device ADC = 10
-#fuses INTRC_IO, NOWDT, PROTECT, NOLVP, MCLR, NOBROWNOUT
-#use delay(INTERNAL = 4000000)
+#device ADC=10
+#fuses INTRC_IO,NOWDT,PROTECT,NOLVP,MCLR,NOBROWNOUT
+#use delay(INTERNAL=4000000)
 #include <lcd.c>
 
 void main()
@@ -14,18 +14,23 @@ void main()
    setup_adc(ADC_CLOCK_INTERNAL);
    while (true)
    {
-      iAdc = read_adc();
-      angle = (iAdc * 270) / 1023;
-      voltage = (iAdc * 5) / 1023;
-      printf(lcd_putc, "\f");
-      lcd_gotoxy(1, 1);
-      printf(lcd_putc, "Voltaje: %Lu", voltage);
-      lcd_gotoxy(1, 2);
-      printf(lcd_putc, "Angulo: %Lu", angle);
-      delay_ms(1000);
-      printf(lcd_putc, "\f");
-      lcd_gotoxy(1, 1);
-      printf(lcd_putc, "ADC: %Lu", iAdc);
-      delay_ms(1000);
+      iAdc=read_adc();
+      lcd_gotoxy(1,1);
+      printf(lcd_putc,"\fADC");
+      lcd_gotoxy(1,2);
+      printf(lcd_putc,"Valor: %Lu",iAdc);
+      delay_ms(500);
+      voltage=(iAdc*5)/1023;
+      lcd_gotoxy(1,1);
+      printf(lcd_putc,"\fVoltaje");
+      lcd_gotoxy(1,2);
+      printf(lcd_putc,"Valor: %Lu",voltage);
+      delay_ms(500);
+      angle=(iAdc*270)/1023;
+      lcd_gotoxy(1,1);
+      printf(lcd_putc,"\fAngulo");
+      lcd_gotoxy(1,2);
+      printf(lcd_putc,"Valor: %Lu",angle);
+      delay_ms(500);
    }
 }
