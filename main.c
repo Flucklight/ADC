@@ -1,9 +1,8 @@
 #include <16f887.h>
-#include <lcd.c>
-
 #device ADC = 10
 #fuses INTRC_IO, NOWDT, PROTECT, NOLVP, MCLR, NOBROWNOUT
 #use delay(INTERNAL = 4000000)
+#include <lcd.c>
 
 void main()
 {
