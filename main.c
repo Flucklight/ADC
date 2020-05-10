@@ -6,17 +6,17 @@
 
 void main()
 {
-   int16 iAdc;
-   int16 angle;
-   int16 voltage;
+   unsigned int16 iAdc;
+   unsigned int16 voltage;
+   unsigned int16 angle;
    lcd_init();
    setup_adc_ports(sAN0); //setup_adc_ports(ALL_ANALOG);
    setup_adc(ADC_CLOCK_INTERNAL);
    while (true)
    {
       iAdc = read_adc();
-      voltage = (iAdc * 5) / 1023;
-      angle = (voltage * 270) / 5;
+      voltage = (iAdc / 1022) * 5;
+      angle = (iAdc / 1022) * 270;
       lcd_gotoxy(1, 1);
       printf(lcd_putc, "\fVoltaje: %Lu", voltage);
       lcd_gotoxy(1, 2);
