@@ -15,13 +15,17 @@ void main()
    while (true)
    {
       iAdc = read_adc();
-      angle = (iAdc * 5) / 1023;
-      voltage = (iAdc * 270) / 1023;
+      angle = (iAdc * 270) / 1023;
+      voltage = (iAdc * 5) / 1023;
       printf(lcd_putc, "\f");
       lcd_gotoxy(1, 1);
       printf(lcd_putc, "Voltaje: %Lu", voltage);
       lcd_gotoxy(1, 2);
       printf(lcd_putc, "Angulo: %Lu", angle);
+      delay_ms(500);
+      printf(lcd_putc, "\f");
+      lcd_gotoxy(1, 1);
+      printf(lcd_putc, "ADC: %Lu", iAdc);
       delay_ms(100);
    }
 }
