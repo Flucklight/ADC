@@ -19,10 +19,11 @@ void main()
       iAdc = read_adc();
       angle = (iAdc * 5) / 1023;
       voltage = (iAdc * 270) / 1023;
+      printf(lcd_putc, "\f");
       lcd_gotoxy(1, 1);
-      printf(lcd_putc, "\fVoltaje: %Lu", voltage);
+      printf(lcd_putc, "Voltaje: %Lu", voltage);
       lcd_gotoxy(1, 2);
-      printf(lcd_putc, "\fAngulo: %Lu", voltage);
+      printf(lcd_putc, "Angulo: %Lu", voltage);
       delay_ms(100);
    }
 }
