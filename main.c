@@ -22,10 +22,10 @@ void main()
       printf(lcd_putc, "Voltaje: %Lu", voltage);
       lcd_gotoxy(1, 2);
       printf(lcd_putc, "Angulo: %Lu", angle);
-      delay_ms(500);
+      delay_ms(1000);
       printf(lcd_putc, "\f");
       lcd_gotoxy(1, 1);
       printf(lcd_putc, "ADC: %Lu", iAdc);
-      delay_ms(100);
+      delay_ms(1000);
    }
 }
