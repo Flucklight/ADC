@@ -19,6 +19,7 @@ void main()
       voltage = (iAdc*5)/1023;
       lcd_gotoxy(1, 1);
       printf(lcd_putc, "\fVoltaje: %Lu", voltage);
+      iAdc2 = read_adc();
       angle = ((iAdc2*54)/1023)*5;
       lcd_gotoxy(1, 2);
       printf(lcd_putc, "Angulo: %Lu", angle);
