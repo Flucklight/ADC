@@ -23,7 +23,7 @@ void main()
       lcd_gotoxy(1, 1);
       printf(lcd_putc, "Voltaje: %Lu", voltage);
       lcd_gotoxy(1, 2);
-      printf(lcd_putc, "Angulo: %Lu", voltage);
+      printf(lcd_putc, "Angulo: %Lu", angle);
       delay_ms(100);
    }
 }
