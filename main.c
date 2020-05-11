@@ -8,7 +8,7 @@ void main()
 {
    unsigned int16 iAdc;
    unsigned int16 voltage;
-   unsigned int16 angle;
+   unsigned int32 angle;
    lcd_init();
    setup_adc_ports(sAN0); //setup_adc_ports(ALL_ANALOG);
    setup_adc(ADC_CLOCK_INTERNAL);
